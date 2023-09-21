@@ -101,3 +101,41 @@
   border-radius: toRem(10);
   border: toRem(1) solid #fff4e8;
 }
+
+//========================================================================================================================================================
+
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: toRem(10);
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #d9d9d9;
+    font-family: Inter;
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 121.1%; /* 23/19 */
+    width: toRem(33);
+    height: toRem(33);
+    flex-shrink: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease 0s;
+    &.active {
+      background-color: #fff4e8;
+      color: #1a1a1a;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff4e8;
+        color: #1a1a1a;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
