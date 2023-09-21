@@ -1,4 +1,59 @@
 // Заголовки, загальні БЕМ блоки та інше...
+//========================================================================================================================================================
+
+.title {
+  color: #fff4e8;
+  font-family: Inter;
+  @include adaptiveValue("font-size", 40, 28);
+  font-weight: 700;
+  line-height: 120%; /* 48/40 */
+}
+
+//========================================================================================================================================================
+
+.top-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: toRem(20);
+  row-gap: toRem(15);
+  &__title {
+  }
+
+  &__link {
+    margin-left: auto;
+    position: relative;
+    color: #fff4e8;
+    font-family: Inter;
+    @include adaptiveValue("font-size", 18, 14);
+    font-weight: 400;
+    line-height: 138.889%;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #feae50;
+        &::after {
+          background-color: #feae50;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: toRem(1);
+      bottom: toRem(-5);
+      left: 0;
+      background-color: #fff4e8;
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
+
+//========================================================================================================================================================
 
 .pagination {
   display: flex;
@@ -27,3 +82,5 @@
     background-color: #feae50;
   }
 }
+
+//========================================================================================================================================================
