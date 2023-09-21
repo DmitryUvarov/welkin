@@ -1,1 +1,29 @@
 // Заголовки, загальні БЕМ блоки та інше...
+
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include adaptiveValue("column-gap", 12, 8);
+  row-gap: toRem(7);
+  .swiper-pagination-bullet {
+    cursor: pointer;
+    @include adaptiveValue("width", 21, 18);
+    @include adaptiveValue("height", 21, 18);
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 244, 232, 0.2);
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #feae50;
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #feae50;
+  }
+}

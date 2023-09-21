@@ -1,5 +1,5 @@
 /*
-Документація по роботі у шаблоні: 
+Документація по роботі у шаблоні:
 Документація слайдера: https://swiperjs.com/
 Сніппет(HTML): swiper
 */
@@ -8,10 +8,10 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import {  Pagination, Autoplay } from 'swiper/modules';
 /*
 Основні модулі слайдера:
-Navigation, Pagination, Autoplay, 
+Navigation, Pagination, Autoplay,
 EffectFade, Lazy, Manipulation
 Детальніше дивись https://swiperjs.com/
 */
@@ -28,12 +28,12 @@ import "../../scss/base/swiper.scss";
 function initSliders() {
 	// Список слайдерів
 	// Перевіряємо, чи є слайдер на сторінці
-	if (document.querySelector('.swiper')) { // Вказуємо склас потрібного слайдера
+	if (document.querySelector('.swiper123')) { // Вказуємо склас потрібного слайдера
 		// Створюємо слайдер
-		new Swiper('.swiper', { // Вказуємо склас потрібного слайдера
+		new Swiper('.swiper123', { // Вказуємо склас потрібного слайдера
 			// Підключаємо модулі слайдера
 			// для конкретного випадку
-			modules: [Navigation],
+			modules: [],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
@@ -103,6 +103,55 @@ function initSliders() {
 			on: {
 
 			}
+		});
+	}
+
+	// if (document.querySelector('.swiper123123')) {
+	// 	new Swiper('.swiper123123', {
+	// 		modules: [Pagination],
+	// 		observer: true,
+	// 		observeParents: true,
+	// 		slidesPerView: 1,
+	// 		spaceBetween: 0,
+	// 		speed: 800,
+
+	// 		effect: 'fade',
+	// 		autoplay: {
+	// 			delay: 3000,
+	// 			disableOnInteraction: false,
+	// 		},
+
+	// 		pagination: {
+	// 			el: '.swiper-pagination',
+	// 			clickable: true,
+	// 		},
+
+	// 	});
+	// }
+
+
+	/////////////
+
+	if (document.querySelector('.hero__slider')) {
+		new Swiper('.hero__slider', {
+			modules: [Pagination, Autoplay],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 0,
+			speed: 800,
+			allowTouchMove: false,
+
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false,
+			},
+
+			pagination: {
+				el: '.hero__slider .hero__pagination',
+				clickable: true,
+			},
+
 		});
 	}
 }
