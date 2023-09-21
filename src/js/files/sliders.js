@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from 'swiper';
-import {  Pagination, Autoplay, Thumbs } from 'swiper/modules';
+import {  Pagination, Autoplay, Thumbs, Mousewheel  } from 'swiper/modules';
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -160,12 +160,13 @@ function initSliders() {
 
 	if (document.querySelector('.product-trumb-slider')) {
 		const productTrumbSlider = new Swiper('.product-trumb-slider', {
-			modules: [],
+			modules: [Mousewheel],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 3.3,
 			spaceBetween: 20,
-			speed: 800,
+			speed: 300,
+			mousewheel: true,
 			direction: 'vertical'
 		});
 
@@ -175,6 +176,7 @@ function initSliders() {
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 20,
+
 			speed: 800,
 			thumbs: {
 				swiper: productTrumbSlider,
