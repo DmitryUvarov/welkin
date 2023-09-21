@@ -24,9 +24,9 @@ function pageLoad() {
             if (htmlTag.closest(".menu-open")) {
                 menuClose()
             }
-            document.querySelector('[data-search]').classList.add('active')
-        } else if (!targetElement.closest('[data-search]') && document.querySelector('[data-search].active') || targetElement.closest('[data-search-close]')) {
-            document.querySelector('[data-search]').classList.remove('active')
+            htmlTag.classList.add('search-active')
+        }else if (!targetElement.closest('[data-search]') && htmlTag.closest('.search-active') || targetElement.closest('[data-search-close]')) {
+            htmlTag.classList.remove('search-active')
         }
 
         //////////////////////

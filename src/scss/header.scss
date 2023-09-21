@@ -290,7 +290,7 @@
   background-color: #fff;
   height: toRem(60);
 
-  z-index: 6;
+  z-index: 7;
   transition: all 0.3s ease 0s;
 
   @media (max-width: $mobile) {
@@ -299,7 +299,7 @@
     transform: translateX(0);
   }
 
-  &.active {
+  .search-active & {
     @include adaptiveValue("top", 100, 80);
   }
 

@@ -62,7 +62,7 @@
   }
 
   &__body {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       position: fixed;
       width: 100%;
       height: 100%;
@@ -101,6 +101,9 @@
   &__buttons {
     display: flex;
     justify-content: flex-end;
+    @media (min-width: $tablet) {
+      display: none;
+    }
   }
 
   &__button {
@@ -112,7 +115,7 @@
   }
 
   &__show {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       position: fixed;
       width: 100%;
       min-height: toRem(55);
@@ -131,6 +134,10 @@
         visibility: visible;
         transition: all 0.3s ease 0.3s;
       }
+    }
+
+    @media (min-width: $tablet) {
+      display: none;
     }
   }
 
