@@ -15,9 +15,11 @@
   @include adaptiveValue("font-size", 18, 16);
   font-weight: 500;
   line-height: 138.889%; /* 138.889% */
+  transition: all 0.3s ease 0s;
 
   @media (any-hover: hover) {
     &:hover {
+      box-shadow: rgba(254, 174, 80, 0.2) 0px 7px 29px 0px;
     }
   }
   &--fw {

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Карточка товара"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+
+
+            <section class="product">
+                <div class="product__container">
+                    <div class="product__body">
+                        <div class="product__sliders">
+                            <div class="product__slider-trumb product-trumb-slider">
+                                <div class="product-trumb-slider__wrapper swiper-wrapper">
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/01.png" alt=""></div>
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/02.png" alt=""></div>
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/03.png" alt=""></div>
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/01.png" alt=""></div>
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/02.png" alt=""></div>
+                                    <div class="product-trumb-slider__slide swiper-slide"><img src="@img/product/03.png" alt=""></div>
+                                </div>
+                            </div>
+                            <div class="product__slider product-slider">
+                                <div class="product-slider__wrapper swiper-wrapper">
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                    <div class="product-slider__slide swiper-slide"><img src="@img/product/big01.png" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product__content content-product">
+                            <h1 class="content-product__title">Novus *Full DC Inverter</h1>
+                            <div class="content-product__price">7.756.800 – 11.514.000 СУМ</div>
+                            <ul class="content-product__list">
+                                <div class="content-product__list-title">Описание</div>
+                                <li class="content-product__item">• Охлаждает и обогревает при низком (110V) и высоком (260V) напряжении</li>
+                                <li class="content-product__item">• Встроенный Wi-Fi модуль</li>
+                                <li class="content-product__item">• Экономия до 80% электроэнергии</li>
+                                <li class="content-product__item">• Фреон марки R32</li>
+                                <li class="content-product__item">• Антикоррозийное покрытие Golden Fin</li>
+                                <li class="content-product__item">• Функция 3D обдува</li>
+                                <li class="content-product__item">• Скрытый LED Display</li>
+                            </ul>
+                            <button class="content-product__button button">КУПИТЬ</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="products">
+                <div class="products__container">
+                    <h1 class="products__title title">ПОХОЖИЕ ТОВАРЫ</h1>
+                    <div class="products__items products__items_block">
+                        <article class="products__item item-products">
+                            <a href="#" class="item-products__image"><img src="@img/products/01.png" alt=""></a>
+                            <h3 class="item-products__title"><a href="#">Novus *Full DC Inverter</a></h3>
+                            <div class="item-products__bottom">
+                                <div class="item-products__price">7.756.800 сум</div>
+                                <a href="#" class="item-products__link _icon-arrow"></a>
+                            </div>
+                        </article>
+                        <article class="products__item item-products">
+                            <a href="#" class="item-products__image"><img src="@img/products/02.png" alt=""></a>
+                            <h3 class="item-products__title"><a href="#">General *Full DC Inverter</a></h3>
+                            <div class="item-products__bottom">
+                                <div class="item-products__price">1.000.000 сум</div>
+                                <a href="#" class="item-products__link _icon-arrow"></a>
+                            </div>
+                        </article>
+                        <article class="products__item item-products">
+                            <a href="#" class="item-products__image"><img src="@img/products/03.png" alt=""></a>
+                            <h3 class="item-products__title"><a href="#">Vavilon *Inverter</a></h3>
+                            <div class="item-products__bottom">
+                                <div class="item-products__price">1.000.000 сум</div>
+                                <a href="#" class="item-products__link _icon-arrow"></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
