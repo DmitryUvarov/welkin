@@ -38,6 +38,10 @@
 
     @include adaptiveValue("padding-top", 263, 100);
     @include adaptiveValue("padding-bottom", 207, 90);
+
+    @media (max-width: $mobile) {
+      min-height: calc(100svh - toRem(65));
+    }
   }
 
   &__title {
