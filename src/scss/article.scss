@@ -1,0 +1,44 @@
+.article {
+  @include adaptiveValue("padding-top", 50, 40);
+  @include adaptiveValue("padding-bottom", 100, 40);
+  &__container {
+  }
+
+  &__body {
+  }
+
+  &__image-ibg {
+    border-radius: 20px;
+    overflow: hidden;
+    @include adaptiveValue("margin-bottom", 50, 30);
+    padding-bottom: percent(375, 1180);
+
+    @media (max-width: $mobile) {
+      padding-bottom: percent(175, 345);
+    }
+  }
+
+  &__title {
+    color: #fff4e8;
+    @include adaptiveValue("font-size", 38, 26);
+    font-weight: 700;
+    line-height: 121.1%; /* 46/38 */
+
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__text {
+    color: #d9d9d9;
+    font-size: toRem(16);
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
+  }
+}
