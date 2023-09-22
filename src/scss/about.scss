@@ -1,0 +1,49 @@
+.about {
+  @include adaptiveValue("padding-top", 50, 40);
+  @include adaptiveValue("padding-bottom", 100, 60);
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    gap: toRem(30);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+  }
+
+  &__title {
+    @include adaptiveValue("margin-bottom", 50, 30);
+  }
+
+  &__text {
+    color: #d9d9d9;
+    @include adaptiveValue("font-size", 16, 15);
+    font-weight: 400;
+    line-height: 140%; /* 22.4px */
+    max-width: toRem(580);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(20);
+      }
+    }
+  }
+
+  &__image-ibg {
+    border-radius: 20px;
+    overflow: hidden;
+    flex: 1 0 percent(500, 1180);
+    padding-bottom: percent(435, 1180);
+    height: fit-content;
+
+    @media (max-width: $mobile) {
+      padding-bottom: percent(280, 345);
+    }
+  }
+}
