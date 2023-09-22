@@ -189,6 +189,43 @@ function initSliders() {
 			},
 		});
 	}
+
+	//////
+
+	if (document.querySelector('.slider-partners')) {
+		new Swiper('.slider-partners', {
+			modules: [Pagination],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 4,
+			spaceBetween: 20,
+			speed: 800,
+
+			pagination: {
+				el: '.slider-partners .slider-partners__pagination',
+				clickable: true,
+			},
+
+			breakpoints: {
+				375: {
+					slidesPerView: 1.2,
+					spaceBetween: 20,
+				},
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 20,
+				},
+				992: {
+					slidesPerView: 4,
+					spaceBetween: 20,
+				},
+			},
+		});
+	}
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)
 function initSlidersScroll() {

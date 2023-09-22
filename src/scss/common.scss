@@ -69,6 +69,7 @@
   justify-content: center;
   @include adaptiveValue("column-gap", 12, 8);
   row-gap: toRem(7);
+
   .swiper-pagination-bullet {
     cursor: pointer;
     @include adaptiveValue("width", 21, 18);
@@ -87,6 +88,15 @@
   }
   .swiper-pagination-bullet-active {
     background-color: #feae50;
+  }
+
+  &_white {
+    .swiper-pagination-bullet {
+      background-color: rgba(233, 233, 233, 0.35);
+    }
+    .swiper-pagination-bullet-active {
+      background-color: #fff4e8;
+    }
   }
 }
 
