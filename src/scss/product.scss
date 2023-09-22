@@ -24,7 +24,7 @@
     column-gap: toRem(20);
 
     @media (max-width: $mobile) {
-      min-height: toRem(400);
+      flex-direction: column;
     }
   }
 
@@ -40,11 +40,23 @@
   &__slider {
     min-width: 0;
     flex-grow: 1;
+
+    @media (max-width: $mobile) {
+      min-height: toRem(400);
+    }
   }
 
   &__content {
     flex: 1 1 auto;
     grid-row: span 2;
+  }
+
+  &__pagination {
+    margin-top: toRem(30);
+
+    @media (min-width: $mobile) {
+      display: none;
+    }
   }
 }
 .product-trumb-slider {

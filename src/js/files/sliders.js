@@ -171,13 +171,19 @@ function initSliders() {
 		});
 
 		new Swiper('.product-slider', {
-			modules: [Thumbs],
+			modules: [Thumbs, Pagination],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,
 			spaceBetween: 20,
 
 			speed: 800,
+
+			pagination: {
+				el: '.product__pagination',
+				clickable: true,
+			},
+
 			thumbs: {
 				swiper: productTrumbSlider,
 			},
