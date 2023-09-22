@@ -233,6 +233,7 @@
       min-width: toRem(270);
       background-color: #fff4e8;
       padding: toRem(15) toRem(10) toRem(20);
+      z-index: 2;
 
       box-shadow: rgba(100, 100, 111, 0.3) 0 7px 29px 0;
       transition: all 0.3s ease 0s;
