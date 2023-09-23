@@ -3,90 +3,71 @@
 
 // Блок зі спойлерами
 .spollers {
-	display: grid;
-	gap: 15px;
 }
 // Спойлер
 .spollers__item {
-	font-size: toRem(20);
+  @include adaptiveValue("padding-top", 20, 10);
+  @include adaptiveValue("padding-bottom", 20, 10);
+
+  border-bottom: toRem(1) solid rgba(136, 136, 136, 0.24);
+  &:first-child {
+    border-top: toRem(1) solid rgba(136, 136, 136, 0.24);
+  }
 }
 // Заголовок спойлера
 .spollers__title {
-	width: 100%;
-	cursor: default;
-	text-align: left;
-	border: 1px solid #eee;
-	padding: toRem(10) toRem(15);
-	border-radius: toRem(5);
-	position: relative;
-	list-style: none;
-	&::marker {
-	}
-	._spoller-init & {
-		cursor: pointer;
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			right: 10px;
-			top: 50%;
-			background-color: #000;
-			height: 2px;
-			width: 15px;
-			transition: transform 0.5s ease 0s;
-		}
-		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
-		}
-		&::after {
-			transform: translate(0, -50%) rotate(-40deg);
-		}
-		&._spoller-active {
-			&::before {
-				transform: translateX(-75%) rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		/*
-		._spoller-init & {
-			position: relative;
-			width: 100%;
-			text-align: left;
-			&::before,
-			&::after {
-				content: "";
-				position: absolute;
-				right: 0;
-				top: toRem(12);
-				height: toRem(1);
-				transition: all 0.3s ease 0s;
-				width: toRem(10);
-				background-color: #000;
-			}
-			&::before {
-				transform: rotate(40deg);
-				right: toRem(7);
-			}
-			&::after {
-				transform: rotate(-40deg);
-			}
-		}
-		&._spoller-active {
-			&::before {
-				transform: rotate(-40deg);
-			}
-			&::after {
-				transform: rotate(40deg);
-			}
-		}
-		*/
-	}
+  width: 100%;
+  cursor: default;
+  text-align: left;
+  position: relative;
+  list-style: none;
+
+  color: #fff4e8;
+  font-family: Inter;
+  @include adaptiveValue("font-size", 19, 17);
+  font-weight: 700;
+  line-height: 131.579%; /* 131.579% */
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: toRem(10);
+
+  &::marker {
+  }
+  ._spoller-init & {
+    cursor: pointer;
+
+    &::after {
+      content: "\e901";
+      @extend %ic;
+      transition: transform 0.5s ease 0s;
+      color: #feae50;
+      @include adaptiveValue("font-size", 44, 36);
+
+      transform: rotate(90deg);
+    }
+
+    &._spoller-active {
+      &::after {
+        transform: rotate(270deg);
+      }
+    }
+  }
 }
 // Контент спойлера
 .spollers__body {
-	padding: toRem(20);
-	border-radius: toRem(5);
-	border: 1px solid #eee;
+  padding: toRem(15) 0 toRem(10);
+  border-radius: toRem(5);
+
+  color: #d9d9d9;
+  @include adaptiveValue("font-size", 16, 14);
+  font-weight: 500;
+  line-height: 160%; /* 25.6px */
+}
+
+.spollers__line {
+  &:not(:last-child) {
+    margin-bottom: toRem(5);
+  }
 }

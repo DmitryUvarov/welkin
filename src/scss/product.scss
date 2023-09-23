@@ -59,6 +59,7 @@
     }
   }
 }
+
 .product-trumb-slider {
   overflow: hidden;
   &__wrapper {
@@ -102,6 +103,7 @@
     }
   }
 }
+
 .content-product {
   &__title {
     color: #fff4e8;
@@ -159,5 +161,11 @@
     @include adaptiveValue("height", 61, 50);
     @include adaptiveValue("font-size", 20, 18);
     font-weight: 700;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(35);
+    }
+  }
+  &__spollers {
   }
 }
