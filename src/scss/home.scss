@@ -125,6 +125,13 @@
   flex-direction: column;
   padding: toRem(20);
   min-height: toRem(400);
+  transition: all 0.3s ease 0s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      box-shadow: rgba(233, 233, 233, 0.4) 0px 7px 29px 0px;
+    }
+  }
 
   &__title {
     @include adaptiveValue("font-size", 22, 18);
@@ -186,7 +193,8 @@
     counter-reset: number;
 
     @media (min-width: $tablet) {
-      grid-template-rows: repeat(3, auto);
+      // grid-template-rows: repeat(3, auto);
+      grid-template-rows: repeat(3, 1fr);
       grid-auto-flow: column;
     }
     @media (min-width: $mobileSmall) {
@@ -208,6 +216,10 @@
   column-gap: toRem(33);
   row-gap: toRem(15);
 
+  @media (min-width: $tablet) {
+    min-height: toRem(200);
+  }
+
   @media (max-width: em(660)) {
     flex-direction: column;
   }
@@ -223,6 +235,7 @@
   }
 
   &__body {
+    width: 100%;
   }
 
   &__title {
@@ -256,6 +269,8 @@
     font-size: toRem(16);
     font-weight: 400;
     line-height: 140%; /* 22.4px */
+
+    @include adaptiveValue("padding-right", 64, 51);
     p {
       &:not(:last-child) {
         margin-bottom: toRem(10);
