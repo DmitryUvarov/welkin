@@ -13,7 +13,10 @@
       box-shadow: 0 0 5px #463e3a;
     }
     &:checked + .checkbox__label:before {
-      background: #463e3a;
+      color: #feae50;
+      @media (min-width: $tablet) {
+        background-color: #463e3a57;
+      }
     }
   }
   // .checkbox__label
@@ -23,13 +26,20 @@
     position: relative;
     gap: toRem(15);
     &:before {
-      content: "";
+      content: "\e908";
       align-self: flex-start;
       flex: 0 0 toRem(19);
       width: toRem(19);
       height: toRem(19);
       border: 1px solid #463e3a;
       border-radius: toRem(5);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: transparent;
+      @extend %ic;
+      font-size: toRem(10);
     }
   }
   // .checkbox__text

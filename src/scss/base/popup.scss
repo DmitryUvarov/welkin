@@ -1,61 +1,163 @@
 body::after {
-	content: "";
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	transition: opacity 0.8s ease 0s;
-	pointer-events: none;
-	z-index: 149;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease 0s;
+  pointer-events: none;
+  z-index: 149;
 }
 .popup-show body::after {
-	opacity: 1;
+  opacity: 1;
 }
 .popup {
-	position: fixed;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px 10px;
+  transition: visibility 0.8s ease 0s;
+  visibility: hidden;
+  pointer-events: none;
 }
 .popup_show {
-	z-index: 150;
-	visibility: visible;
-	overflow: auto;
-	pointer-events: auto;
+  z-index: 150;
+  visibility: visible;
+  overflow: auto;
+  pointer-events: auto;
 }
 .popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
+  visibility: visible;
+  transform: scale(1);
 }
 .popup__wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
-	}
+  visibility: hidden;
+  transform: scale(0);
+  transition: transform 0.3s ease 0s;
+  background-color: #eee;
+  padding: 20px;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 20px;
+  .lock & {
+    visibility: visible;
+  }
+}
+
+//////////////
+
+.popup-contact {
+  .popup__content {
+    max-width: toRem(970);
+    border-radius: 20px;
+    background: #fff4e8;
+    padding: toRem(45) toRem(90);
+
+    @include adaptiveValue("padding-left", 90, 20, 0, 1210, 767);
+    @include adaptiveValue("padding-right", 90, 20, 0, 1210, 767);
+    @include adaptiveValue("padding-top", 45, 30);
+    @include adaptiveValue("padding-bottom", 45, 30);
+  }
+
+  &__title {
+    color: #463e3a;
+    @include adaptiveValue("font-size", 38, 26);
+    font-weight: 700;
+    line-height: 121.1%; /* 46/38 */
+    margin-bottom: toRem(30);
+    text-align: center;
+  }
+
+  &__close {
+    position: absolute;
+    top: toRem(-9999);
+  }
+}
+
+.contact-form {
+  &__line {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    @include adaptiveValue("gap", 50, 10);
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    color: #1a1a1a;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+
+    border-bottom: toRem(1) solid rgba(136, 136, 136, 0.24);
+    @include adaptiveValue("padding-top", 21, 15);
+    @include adaptiveValue("padding-bottom", 21, 15);
+    background-color: transparent;
+    transition: all 0.3s ease 0s;
+
+    &::placeholder {
+      transition: all 0.3s ease 0s;
+      color: rgba(136, 136, 136, 0.24);
+    }
+    &:focus {
+      outline: none;
+      border-color: #1a1a1a;
+      &::placeholder {
+        color: #1a1a1a;
+      }
+    }
+
+    &._form-error {
+      border-color: red;
+      color: red;
+      &::placeholder {
+        color: red;
+      }
+    }
+  }
+
+  &__button {
+    color: #463e3a;
+    font-family: Inter;
+    @include adaptiveValue("font-size", 20, 16);
+    font-weight: 700;
+    line-height: 25px; /* 125% */
+
+    border-radius: 20px;
+    background: #feae50;
+    max-width: toRem(460);
+    width: 100%;
+
+    @include adaptiveValue("margin-top", 62, 40);
+    @include adaptiveValue("height", 61, 45);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        box-shadow: rgba(254, 174, 80, 0.2) 0px 7px 29px 0px;
+      }
+    }
+  }
 }

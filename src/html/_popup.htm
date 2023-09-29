@@ -1,10 +1,15 @@
-<div id="popup" aria-hidden="true" class="popup">
+<div id="contact" aria-hidden="true" class="popup popup-contact">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
-			</div>
+			<button data-close type="button" class="popup-contact__close">Закрити</button>
+			<h6 class="popup-contact__title">Оставить контакты</h6>
+			<form action="#" method="POST" action="sendmail.php" data-dev class="popup-contact__form contact-form">
+				<div class="contact-form__line">
+					<input autocomplete="off" type="text" name="form[]" data-required placeholder="Имя" class="contact-form__input">
+					<input autocomplete="off" type="text" name="form[]" data-required="phone" data-phone placeholder="Номер телефона" class="contact-form__input">
+				</div>
+				<button type="submit" class="contact-form__button">ОТПРАВИТЬ</button>
+			</form>
 		</div>
 	</div>
 </div>
