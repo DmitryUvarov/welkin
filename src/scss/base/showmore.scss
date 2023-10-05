@@ -3,15 +3,117 @@
 [data-showmore-content] {
 }
 [data-showmore-button] {
-	span {
-		&:last-child {
-			display: none;
-		}
-		._showmore-active & {
-			display: none;
-			&:last-child {
-				display: block;
-			}
-		}
-	}
+  span {
+    &:last-child {
+      display: none;
+    }
+    ._showmore-active & {
+      display: none;
+      &:last-child {
+        display: block;
+      }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.showmore {
+  &__body {
+    @include adaptiveValue("padding-top", 20, 10);
+    @include adaptiveValue("padding-bottom", 20, 10);
+
+    border-bottom: toRem(1) solid rgba(136, 136, 136, 0.24);
+    &:first-child {
+      border-top: toRem(1) solid rgba(136, 136, 136, 0.24);
+    }
+  }
+
+  &__title {
+    cursor: pointer;
+    position: relative;
+    color: #fff4e8;
+    font-family: Inter;
+    @include adaptiveValue("font-size", 19, 17);
+    font-weight: 700;
+    line-height: 131.579%; /* 131.579% */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: toRem(10);
+    margin-bottom: toRem(15);
+
+    &::after {
+      content: "\e901";
+      @extend %ic;
+      transition: transform 0.5s ease 0s;
+      color: #feae50;
+      @include adaptiveValue("font-size", 44, 36);
+
+      transform: rotate(90deg);
+    }
+
+    ._showmore-active & {
+      color: #feae50;
+      &::after {
+        transform: rotate(270deg);
+      }
+    }
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #feae50;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    color: #d9d9d9;
+    @include adaptiveValue("font-size", 16, 14);
+    font-weight: 500;
+    line-height: 160%; /* 25.6px */
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: toRem(15);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: toRem(45);
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+      background: linear-gradient(rgba(70, 62, 58, 0.4), rgba(70, 62, 58, 0.7));
+    }
+
+    ._showmore-active & {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__more {
+    color: #d9d9d9;
+    @include adaptiveValue("font-size", 18, 16);
+    font-weight: 500;
+    line-height: 160%; /* 25.6px */
+
+    margin-top: toRem(20);
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #feae50;
+      }
+    }
+  }
 }
