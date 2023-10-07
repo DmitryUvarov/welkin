@@ -37,10 +37,10 @@ function initSliders() {
 			speed: 800,
 			allowTouchMove: false,
 
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
+			// autoplay: {
+			// 	delay: 3000,
+			// 	disableOnInteraction: false,
+			// },
 
 			pagination: {
 				el: '.hero__slider .hero__pagination',
