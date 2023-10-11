@@ -338,7 +338,7 @@
   &__image-ibg {
     display: block;
     border-radius: toRem(20);
-    padding-bottom: percent(389, 380);
+    padding-bottom: 100%;
     overflow: hidden;
 
     &:not(:last-child) {
