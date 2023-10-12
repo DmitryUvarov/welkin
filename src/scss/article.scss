@@ -11,11 +11,7 @@
     border-radius: 20px;
     overflow: hidden;
     @include adaptiveValue("margin-bottom", 50, 30);
-    padding-bottom: percent(375, 1180);
-
-    @media (max-width: $mobile) {
-      padding-bottom: percent(175, 345);
-    }
+    padding-bottom: 100%;
   }
 
   &__title {
