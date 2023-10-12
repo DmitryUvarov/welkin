@@ -2,6 +2,7 @@
   @include adaptiveValue("padding-top", 50, 40);
   @include adaptiveValue("padding-bottom", 100, 40);
   &__container {
+    max-width: toRem(830);
   }
 
   &__body {
@@ -27,7 +28,7 @@
 
   &__text {
     color: #d9d9d9;
-    font-size: toRem(16);
+    @include adaptiveValue("font-size", 18, 16);
     font-weight: 400;
     line-height: 140%; /* 22.4px */
 
