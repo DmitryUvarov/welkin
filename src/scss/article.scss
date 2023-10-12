@@ -12,7 +12,16 @@
     border-radius: 20px;
     overflow: hidden;
     @include adaptiveValue("margin-bottom", 50, 30);
-    padding-bottom: 100%;
+
+    @media (min-width: em(830)) {
+      padding-bottom: percent(700, 800);
+      max-width: toRem(700);
+      margin-right: auto;
+      margin-left: auto;
+    }
+    @media (max-width: em(830)) {
+      padding-bottom: 100%;
+    }
   }
 
   &__title {
